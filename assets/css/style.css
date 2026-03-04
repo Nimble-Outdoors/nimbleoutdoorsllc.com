@@ -1,12 +1,48 @@
 :root {
+  /* ============================================
+     COLOR PALETTE
+     ============================================
+     This site uses a 2-color brand design with
+     dark backgrounds for a modern, premium feel.
+
+     PRIMARY COLORS - Forest green (nature/outdoors)
+     - primary: Main brand color, buttons, accents
+     - primary-dark: Hover states, emphasis
+
+     SECONDARY COLORS - Warm orange (energy/contrast)
+     - secondary: CTA buttons, highlights
+     - secondary-dark: Hover states
+
+     NEUTRAL COLORS
+     - text: Primary text on dark backgrounds
+     - text-light: Secondary text, muted content
+     - bg: Primary background (black)
+     - bg-alt: Alternative background (dark gray)
+
+     SHADOW COLORS
+     - shadow: Box shadows and overlays
+     - shadow-light: Subtle shadows
+     ============================================ */
+
+  /* Primary - Forest Green */
   --color-primary: #2D5A27;
   --color-primary-dark: #1E3D1A;
+
+  /* Secondary - Warm Orange */
   --color-secondary: #F4A261;
   --color-secondary-dark: #E0763B;
+
+  /* Neutrals */
   --color-text: #FFF;
   --color-text-light: #CCC;
   --color-bg: #000;
   --color-bg-alt: #111;
+
+  /* Shadows */
+  --color-shadow: rgba(0, 0, 0, 0.1);
+  --color-shadow-light: rgba(0, 0, 0, 0.05);
+
+  /* Fonts */
   --font-heading: 'Oswald', sans-serif;
   --font-body: 'Roboto', sans-serif;
 }
@@ -18,7 +54,7 @@
 }
 
 html, body {
-  background: #000;
+  background: var(--color-bg);
 }
 
 body {
@@ -59,7 +95,7 @@ a {
 
 .btn-primary {
   background-color: var(--color-primary);
-  color: white;
+  color: var(--color-text);
 }
 
 .btn-primary:hover {
@@ -69,7 +105,7 @@ a {
 /* Header */
 .site-header {
   background-color: var(--color-bg);
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px var(--color-shadow);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -116,7 +152,7 @@ a {
 
 /* Hero */
 .hero {
-  background: #000;
+  background: var(--color-bg);
   height: 80vh;
   min-height: 500px;
   display: flex;
@@ -124,7 +160,7 @@ a {
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: white;
+  color: var(--color-text);
   position: relative;
   overflow: hidden;
   gap: 20px;
@@ -158,11 +194,6 @@ a {
   margin-right: auto;
 }
 
-@media (min-width: 1200px) {
-  .hero-content p {
-    max-width: 1100px;
-  }
-}
 
 /* Features */
 .features {
@@ -188,7 +219,7 @@ a {
   padding: 40px 30px;
   border-radius: 8px;
   text-align: center;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 6px var(--color-shadow-light);
   transition: transform 0.3s ease;
 }
 
@@ -210,7 +241,7 @@ a {
 .cta-section {
   padding: 80px 0;
   background-color: var(--color-primary);
-  color: white;
+  color: var(--color-text);
   text-align: center;
 }
 
@@ -238,7 +269,7 @@ a {
 .cta-section {
   padding: 80px 0;
   background-color: var(--color-primary);
-  color: white;
+  color: var(--color-text);
   text-align: center;
 }
 
@@ -280,8 +311,8 @@ a {
 
 /* Footer */
 .site-footer {
-  background-color: #000;
-  color: white;
+  background-color: var(--color-bg);
+  color: var(--color-text);
   padding: 60px 0 30px;
 }
 
@@ -301,7 +332,7 @@ a {
 }
 
 .footer-brand .logo-outdoors {
-  color: white;
+  color: var(--color-text);
 }
 
 .footer-tagline {
@@ -315,6 +346,7 @@ a {
 }
 
 /* Responsive */
+
 @media (max-width: 768px) {
   .site-header .container {
     flex-direction: column;
@@ -327,10 +359,23 @@ a {
 
   .hero-content h1 {
     font-size: 2.5rem;
+    color: red;
   }
 
   .features h2,
   .cta-section h2 {
     font-size: 2rem;
+  }
+
+  .hero-title h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0;
+  }
+  
+}
+
+@media (min-width: 1200px) {
+  .hero-content p {
+    max-width: 1100px;
   }
 }
